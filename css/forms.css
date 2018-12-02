@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    font-size: 15px;
+    margin: 0 ;
+    color: #666;
+}
+b {
+    font-weight: bold;
+}
+i {
+    font-weight: italic;
+}
+
+section {
+    width: 1000px; 
+    margin: 0 auto;
+}
+header {
+    position: relative;
+    width: 100%; 
+    height: 300px;
+    background: #ddd url(../img/i.jpg) no-repeat left top;
+    background-size: cover;
+    margin: 0;
+    
+}
+header h1 {
+    position: absolute; 
+    display: block;
+    width: 500px;
+    text-align: center; 
+    font-size: 32px;
+    font-weight: bold; 
+    text-transform: uppercase; 
+    height: 45px; 
+    top: 2; 
+    bottom: 2; 
+    left: 13; 
+    right: 0; 
+    margin: auto;
+    padding: 5px 0 30px;
+    background: rgba(255,0.8,0.8,0.8);
+    border-left: 0px solid #144789;
+    border-right: 0px solid #144789;
+    color: #FFFFFF; 
+}
+#top-menu {width:960px; height:74px; }
+.bg-1 {width:990px; height:64px; background: #144789 url(images/m1.png) repeat-x; padding:0 0 0 10px;}
+.bg-2 {width:940px; height:8px; background: rgba(255,0.8,0.8,0.8);; margin:0 auto;}
+.bg-1 ul { float: left; margin:0; padding:0; list-style:none;}
+.bg-1 ul li {float:left; background: no-repeat right center; padding:0 2px 0 0;}
+.bg-1 ul li a {display:block; height:40px; padding:24px 27px 0 27px; color: #fff;; text-decoration:none; text-transform:uppercase;}
+.bg-1 ul li a:hover {color:#fff; background: rgba(255,0.8,0.8,0.8);;}
+
+
+.style-marquee {
+    height:40px;
+    width:940px;
+    background-color:blue;
+    font-family:Cursive;
+    font-size: 14pt;
+    color: floralwhite;
+    font-style: oblique;
+    margin-top: 8px;
+   
+}
+
+menu {
+    position: relative;
+    display: block;
+    width: 1000px;
+    margin-bottom: 0px;
+    background: #144789;
+}
+menu ul{
+    overflow: hidden;
+    width: 670px;
+    margin: 0 auto;
+}
+menu ul li {
+    float: left;
+}
+menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 8px 30px 20px;
+    font-size: 18px;
+    text-decoration: none; 
+}
+center {
+    text-align: left; 
+    margin-top: 0px;
+    margin-top: 0px;
+    margin: 0 ;
+    width: 100%; 
+    background: #fff; 
+    margin-bottom: 45px;
+}
+news div p {
+    margin-bottom: 10px;
+}
+
+news div q {
+    font-size: 22px;
+    color: #430;
+    margin-top: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+news div h2{
+    font-size: 20px;
+    font-family: "Impact", sans-serif;
+    color: #B00D22;
+    font-weight: 300;
+    clear: both; 
+    padding: 1em 0 0.25em;
+    counter-increment: h2; 
+}
+ news div IMG {
+      width: 400px;
+      height: 300px;
+  }
+IMG.fog {
+    float: left; /* Обтекание картинки по левому краю */
+    padding-right: 10px; /* Отступ слева */
+    padding-bottom: 10px; /* Отступ снизу */
+   }
+page {
+    margin-top: 8px;
+    display : block; 
+    width: calc(100% - 60px);
+    text-align: left;  
+    padding: 0 30px; 
+    margin-bottom: 10px;
+}
+
+page h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #144789;
+}
+page p {
+    display: block;
+    color: #999; 
+    font-size: 22px;
+}
+page q {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: block;
+    text-align: center; 
+    font-size: 30px;
+    color: #444;
+    margin-top: 10px;
+}
+page p span {
+    font-size: 28px;
+    color: #ff0;
+}
+.d11 h3 {
+    
+  font-size: 20px;
+  text-shadow: -5px -4px 3px #999;
+  display: table;
+  width: auto;
+  margin: 0 auto;
+  padding: 15px;
+  letter-spacing: 2px;
+  background: #cbdcea;
+  border: 2px dashed white;
+  color: #666;
+  box-shadow: 0 0 0 4px #cbdcea;
+}
+
+footer h2{
+    font-size: 15px;
+    margin: 0 ;
+    text-align: center; 
+    color: #666;
+}
+footer{
+    
+    position: relative; 
+    width: 100%; 
+    height: 100px;
+    background-size: cover;
+    margin-top: 10px ;
+    color: #fff;
+}
