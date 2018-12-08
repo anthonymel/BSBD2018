@@ -1,8 +1,8 @@
 
 <?php
 // вся процедура работает на сесиях. Именно в ней хранятся данные пользователя, пока он находится на сайте. Очень важно запустить их в самом начале странички!!!
-session_start();
-if (empty(isset($_SESSION['login']))) {
+include ("cookies.php");
+if (empty($loginresult)) {
 	exit("<br><a href='login.php'>Авторизация</a><br> Недостаточно прав для просмотра данной страницы!");
 	}
 ?>
@@ -50,11 +50,11 @@ if (empty(isset($_SESSION['login']))) {
 	 include ("bd.php"); 
      
      
-$query ="SELECT prep_name, arrival_amount, arrival_date FROM prep JOIN arrival using(prep_id) ORDER BY arrival_date DESC LIMIT 5 ";
+	$query ="SELECT prep_name, arrival_amount, arrival_date FROM prep JOIN arrival using(prep_id) ORDER BY arrival_date DESC LIMIT 5 ";
  
-$result = mysqli_query($db, $query) or die("Ошибка " . mysqli_error($db)); 
-if($result)
-{
+	$result = mysqli_query($db, $query) or die("Ошибка " . mysqli_error($db)); 
+	if($result)
+	{
     $rows = mysqli_num_rows($result); // количество полученных строк
      
     echo "<table border='10' bordercolor='black'><tr><th><b>| Название перпарата |</b></th><th><b> Цена(руб.) </b></th><th><b>| Дата поступления |</b></th></tr>";

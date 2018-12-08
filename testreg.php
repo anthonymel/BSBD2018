@@ -1,5 +1,5 @@
 <?php
-session_start();// вся процедура работает на сессиях. Именно в ней хранятся данные пользователя, пока он находится на сайте. Очень важно запустить их в самом начале странички!!!
+//session_start();// вся процедура работает на сессиях. Именно в ней хранятся данные пользователя, пока он находится на сайте. Очень важно запустить их в самом начале странички!!!
 
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
 if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
@@ -36,12 +36,16 @@ exit ("Извините, введённый вами логин неверный
 else {
 //если существует, то сверяем пароли
           if ($myrow['pass']==$password) {
+			 $token=MD5($myrow['user_id']+'erondondon');
+			$query = "DELETE FROM sessions WHERE token='$token'";
+			mysqli_query($db, $query);
           //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
-		  $_SESSION['fio']=$myrow['name'];	
-          $_SESSION['login']=$myrow['email'];
-		  $_SESSION['id']=$myrow['user_id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
-		  $usrid=$_SESSION['id'];
-		  $result2 = mysqli_query($db, "INSERT INTO sessions VALUES (DEFAULT, '$usrid', CURRENT_TIMESTAMP)");
+		  setcookie("token", $token);
+		  setcookie("id", $myrow['user_id']);
+		  setcookie("login", $myrow['email']);
+			//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
+		  $userid=$myrow['user_id'];
+		  $result2 = mysqli_query($db, "INSERT INTO sessions VALUES (DEFAULT,'$userid', '$token', CURRENT_TIMESTAMP)");
           echo "Вы успешно вошли на сайт! <a href='login.php'>Личный кабинет</a>";
           }
 

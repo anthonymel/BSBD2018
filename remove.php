@@ -5,9 +5,9 @@
 	</head>
 	<body>
 	<?php
-	$link = mysqli_connect('localhost', 'root', '123', 'pharma');
+	$link = mysqli_connect('localhost', 'admin', '123', 'pharma');
 	mysqli_set_charset($link, "utf-8");
-	$prep = $_POST['prep'];
+	$prep = mysqli_real_escape_string($link,$_POST['prep']);
 
 	  $query = "DELETE FROM prep WHERE prep_name = '$prep'";
 	  mysqli_query($link, $query)
